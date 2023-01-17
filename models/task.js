@@ -7,3 +7,5 @@ const taskSchema = new mongoose.Schema({
     default: false,
   },
 });
+
+export default mongoose.model("Task", taskSchema);
