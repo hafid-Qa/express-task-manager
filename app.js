@@ -1,4 +1,4 @@
-import connect from "./db/connect.js";
+import connectDB from "./db/connect.js";
 import express from "express";
 const app = express();
 import tasksRouter from "./routes/tasks.js";
@@ -14,4 +14,13 @@ app.get("/hello", (req, res) => {
 
 app.use("/api/v1/tasks", tasksRouter);
 
-app.listen(PORT, console.log(`Listening on port ${PORT}...`));
+const start = async () => {
+  try {
+    connectDB();
+    app.listen(PORT, console.log(`Listening on port ${PORT}...`));
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+start();
