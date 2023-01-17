@@ -9,13 +9,10 @@ const PORT = 3000;
 const connectionString = process.env.MONGO_DB_CONNECTION;
 console.log(connectionString);
 // middleware
+app.use(express.static("./public"));
 app.use(express.json());
 
 // routes
-app.get("/hello", (req, res) => {
-  res.send("Task manager App");
-});
-
 app.use("/api/v1/tasks", tasksRouter);
 
 const start = async () => {
