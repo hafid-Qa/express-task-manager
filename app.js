@@ -14,7 +14,7 @@ app.use(express.static("./public"));
 app.use(express.json());
 // routes
 app.use("/api/v1/tasks", tasksRouter);
-// error handlers
+// error handlers for wrong routes
 app.use(notFound);
 const start = async () => {
   try {
