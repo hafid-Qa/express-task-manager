@@ -1,3 +1,4 @@
+import connect from "./db/connect.js";
 import express from "express";
 const app = express();
 import tasksRouter from "./routes/tasks.js";
