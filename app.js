@@ -8,7 +8,7 @@ import notFound from "./middleware/not-found.js";
 import errorHandler from "./middleware/error-handler.js";
 
 const PORT = process.env.PORT || 3000;
-const connectionString = process.env.MONGO_DB_CONNECTION;
+const connectionString = process.env.MONGO_URI;
 
 // middleware
 app.use(express.static("./public"));
